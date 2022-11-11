@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-A flutter package create a bottom app bar that can slide to the medal of the screen when clicking on the button or by sliding by hande.
+A flutter package create a bottom app bar that can slide to the middle of the screen when clicking on the button or by sliding by hande.
 
 ## Usage
 
@@ -66,7 +66,7 @@ In the pubspec.yaml of your flutter project, add the following dependency:
 
 ```yaml
 dependencies:
-  slidable_bottom_app_bar: ^0.0.3
+  slidable_bottom_app_bar: ^1.0.0
 ```
 
 Then run $ flutter pub get. In your library, add the following import:
