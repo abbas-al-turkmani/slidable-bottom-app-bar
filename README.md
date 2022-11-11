@@ -49,7 +49,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/compare/master?expand=1#diff-654807ed3827de9d0e9f0d5525ae38a6a3bba148aab0dcab432284d777d72299')
+![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/blob/main/gifs/1.gif')
 
 ```dart
     ...
@@ -58,7 +58,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/compare/master?expand=1#diff-12433443d12257e8fe66abcee1438000114e8414f7dd19d6a0f4b9c7aaa852a0')
+![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/blob/main/gifs/2.gif')
 
 ## Getting started
 
