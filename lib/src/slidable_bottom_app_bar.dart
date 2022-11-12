@@ -5,6 +5,8 @@ import 'shape_painters/noteched_wave_painter.dart';
 import 'shape_painters/rounded_curved_painter.dart';
 import 'slidable_bottom_app_bar_shape.dart';
 
+///bottom app bar can silde to the position of the screen that spicefied in maxHeight property
+///
 class SlidableBottomAppBar extends StatefulWidget {
   const SlidableBottomAppBar({
     Key? key,
@@ -24,25 +26,43 @@ class SlidableBottomAppBar extends StatefulWidget {
     this.animationCurve = Curves.easeIn,
   }) : super(key: key);
 
+  ///important pageBody property is used to Declare the page contents.
   final Widget pageBody;
+
+  ///body property is used to Declare the body of the app bar the will appear after clicking the button or silding if the haseCenterButton property is set to false.
   final Widget? body;
+
+  ///child property is used to declare the appearance content of the app bar.
   final Widget? child;
+
+  ///the appearance child of the center button
   final Widget? buttonChild;
 
+  ///the color of the bottom app bar including the background color of the body property.
   final Color? color;
+
+  ///the color of the button if the haseCenterButton property is set to false the button will not appear.
   final Color? buttonColor;
+
+  ///the color of the shadow that appeare ander the app bar over the app bar content body.
   final Color shadowColor;
 
   final bool allowShadow;
   final bool hasCenterButton;
 
+  ///the maximum height that app bar will slide to it.
   final double maxHeight;
 
+  ///the slide show animation duration.
   final Duration animationDuration;
+
+  /// the slide show animation curve.
   final Curve animationCurve;
 
+  ///the shape of the app bar.
   final SlidableBottomAppBarShape shape;
 
+  ///onButtonPressed event this Function will run after pressing the button and starting the slide show.
   final void Function()? onButtonPressed;
 
   @override
@@ -83,8 +103,6 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-
-    final ThemeData theme = Theme.of(context);
 
     final double buttomAppBarHeight = screenSize.height * 0.1;
 
@@ -128,7 +146,7 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
                     child: Container(
                       width: screenSize.width,
                       height: widget.maxHeight,
-                      color: widget.color ?? theme.bottomAppBarColor,
+                      color: widget.color,
                       child: widget.body,
                     ),
                   ),
@@ -152,8 +170,7 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
 
                               widget.onButtonPressed!();
                             },
-                            backgroundColor:
-                                widget.buttonColor ?? theme.bottomAppBarColor,
+                            backgroundColor: widget.buttonColor,
                             elevation: 0.1,
                             child: widget.buttonChild,
                           )

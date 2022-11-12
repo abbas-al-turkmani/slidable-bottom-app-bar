@@ -11,9 +11,11 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-A flutter package create a bottom app bar that can slide to the middle of the screen when clicking on the button or by sliding by hande.
+A flutter package create a bottom app bar that can slide to the position of the screen that spicefied in maxHeight property when clicking on the button or by sliding by hande.
 
 ## Usage
+
+the way to use it is by put it after Scaffold widget and put the page contents in the pageBody property, as shown in the example below:
 
 ```dart
 return Scaffold(
@@ -49,7 +51,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/blob/main/gifs/1.gif')
+![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/raw/main/gifs/1.gif')
 
 ```dart
     ...
@@ -58,7 +60,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/blob/main/gifs/2.gif')
+![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/raw/main/gifs/2.gif')
 
 ## Getting started
 
@@ -75,4 +77,8 @@ Then run $ flutter pub get. In your library, add the following import:
 import 'package:slidable_bottom_app_bar/slidable_bottom_app_bar.dart';
 ```
 
-## Additional information
+## About Author
+
+Abbas al turkmani
+[githup](https://github.com/abbas-al-turkmani)
+<a href='maileto:abbas.az408@gmail.com'>mail me</a>
