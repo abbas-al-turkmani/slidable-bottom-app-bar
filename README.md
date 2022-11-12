@@ -51,7 +51,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/raw/main/gifs/1.gif')
+![Preview]('https://raw.githubusercontent.com/abbas-al-turkmani/slidable-bottom-app-bar/main/gifs/1.gif')
 
 ```dart
     ...
@@ -60,7 +60,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://github.com/abbas-al-turkmani/slidable-bottom-app-bar/raw/main/gifs/2.gif')
+![Preview]('https://raw.githubusercontent.com/abbas-al-turkmani/slidable-bottom-app-bar/main/gifs/2.gif')
 
 ## Getting started
 
@@ -68,7 +68,7 @@ In the pubspec.yaml of your flutter project, add the following dependency:
 
 ```yaml
 dependencies:
-  slidable_bottom_app_bar: ^1.0.0
+  slidable_bottom_app_bar: ^1.0.1
 ```
 
 Then run $ flutter pub get. In your library, add the following import:
@@ -81,4 +81,4 @@ import 'package:slidable_bottom_app_bar/slidable_bottom_app_bar.dart';
 
 Abbas al turkmani
 [githup](https://github.com/abbas-al-turkmani)
-<a href='maileto:abbas.az408@gmail.com'>mail me</a>
+[mail me](abbas.az408@gmail.com)

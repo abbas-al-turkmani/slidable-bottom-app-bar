@@ -1,6 +1,6 @@
 name: slidable_bottom_app_bar
 description: A slidable bottom app bar can slide to the medal of the screen.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/abbas-al-turkmani/slidable-bottom-app-bar
 
 environment:
