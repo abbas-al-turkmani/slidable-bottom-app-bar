@@ -15,7 +15,7 @@ A flutter package create a bottom app bar that can slide to the position of the 
 
 ## Things to note
 
-the `slidable_bottom_app_bar` is a widget for mobile platform, if you use it in desctop or web it will locs ugly.
+the `slidable_bottom_app_bar` is a widget for mobile platform, if you use it in desktop or web it will be ugly.
 
 ## Preview
 
@@ -54,11 +54,12 @@ import 'package:slidable_bottom_app_bar/slidable_bottom_app_bar.dart';
 
 ## Usage
 
-the way to use it is by put it after Scaffold widget and put the page contents in the pageBody property, as shown in the example below:
+the way to use it is by put it in the value of body parameter in Scaffold widget and put the page contents in the pageBody property, as shown in the example below:
 
 ```dart
 return Scaffold(
       body: SlidableBottomAppBar(
+        //appearance parameters
         shape: SlidableBottomAppBarShape.rounded,
         color: Colors.blue,
         buttonColor: Colors.blue,
@@ -138,4 +139,4 @@ this value will give you the folowing result:<br />
 
 ## Author
 
-Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani) - [mail me](abbas.az408@gmail.com)
+Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani) - [mail me](maileto:abbas.az408@gmail.com)
