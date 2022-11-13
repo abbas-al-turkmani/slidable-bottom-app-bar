@@ -83,12 +83,28 @@ return Scaffold(
             child: Text('page contents'),
           ),
         ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            SizedBox(
+              width: screenSize.width * 0.1,
+            ),
+            const Icon(
+              Icons.local_activity,
+              color: Colors.white,
+            ),
+          ],
+        ),
       ),
     );
 ```
 
 the example above gives you the folowing result:<br />
-![example](https://user-images.githubusercontent.com/77194041/201508935-333aa7db-d9bf-43b2-a1d8-0a372564d8c8.gif)
+![example](https://user-images.githubusercontent.com/77194041/201512285-45b417fb-3cdb-4ea0-9013-5e846db28e5c.gif)
 
 ## shapes
 
@@ -107,7 +123,6 @@ shape: SlidableBottomAppBarShape.wave,
 
 this value will give you the folowing result:<br />
 ![shape:wave](https://user-images.githubusercontent.com/77194041/201510223-9171ae49-5535-4fab-ba7e-14558cf2ac5c.jpg)
-
 
 ```dart
 shape: SlidableBottomAppBarShape.roundedCurved,

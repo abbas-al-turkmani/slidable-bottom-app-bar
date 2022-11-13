@@ -70,7 +70,7 @@ class SlidableBottomAppBar extends StatefulWidget {
 }
 
 class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
-  bool _isShown = true;
+  bool _isShown = false;
 
   late Map<SlidableBottomAppBarShape, CustomPainter> _shapes;
 
