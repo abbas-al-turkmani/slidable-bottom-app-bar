@@ -17,6 +17,10 @@ A flutter package create a bottom app bar that can slide to the position of the 
 
 the way to use it is by put it after Scaffold widget and put the page contents in the pageBody property, as shown in the example below:
 
+## Things to note
+
+the `slidable_bottom_app_bar` is a widget for mobile platform, if you use it in desctop or web it will locs ugly.
+
 ```dart
 return Scaffold(
         SlidableBottomAppBar(
