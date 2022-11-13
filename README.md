@@ -139,4 +139,4 @@ this value will give you the folowing result:<br />
 
 ## Author
 
-Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani) - [mail me](maileto:abbas.az408@gmail.com)
+Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani) - mail me: abbas.az408@gmail.com
