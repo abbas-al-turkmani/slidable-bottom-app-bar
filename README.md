@@ -55,7 +55,7 @@ return Scaffold(
     ...
 ```
 
-![githup]('https://github.com/abbas-al-turkmani/my-flutter-package-reviews/raw/main/slidable-bottom-app-bar-reviews/button.gif')
+![with button preview](https://user-images.githubusercontent.com/77194041/201508217-b6dd5b9d-0838-4b07-ab94-6aa14a506aed.gif)
 
 ```dart
     ...
@@ -64,7 +64,7 @@ return Scaffold(
     ...
 ```
 
-![githup]('https://github.com/abbas-al-turkmani/my-flutter-package-reviews/raw/main/slidable-bottom-app-bar-reviews/no-button.gif')
+![without button preview](https://user-images.githubusercontent.com/77194041/201508220-efd5c720-43c1-46cd-b149-386a97b20d26.gif)
 
 ## Getting started
 
