@@ -87,7 +87,7 @@ return Scaffold(
     );
 ```
 
-the example above gives you the folowing result:
+the example above gives you the folowing result:<br />
 ![example](https://user-images.githubusercontent.com/77194041/201508935-333aa7db-d9bf-43b2-a1d8-0a372564d8c8.gif)
 
 ## shapes
