@@ -108,6 +108,7 @@ shape: SlidableBottomAppBarShape.wave,
 this value will give you the folowing result:<br />
 ![shape:wave](https://user-images.githubusercontent.com/77194041/201510223-9171ae49-5535-4fab-ba7e-14558cf2ac5c.jpg)
 
+
 ```dart
 shape: SlidableBottomAppBarShape.roundedCurved,
 ```
