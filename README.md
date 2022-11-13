@@ -64,6 +64,13 @@ return Scaffold(
         buttonColor: Colors.blue,
         maxHeight: screenSize.height * 0.5,
         allowShadow: true,
+        //main screen body
+        pageBody: const SafeArea(
+          child: Center(
+            child: Text('page contents'),
+          ),
+        ),
+        //the body of the SlidableBottomAppBar
         body: Column(
           children: const [
             Center(
@@ -71,18 +78,16 @@ return Scaffold(
             ),
           ],
         ),
+        //the center button child
         buttonChild: const Icon(
           Icons.refresh,
           color: Colors.white,
         ),
+        //the center button onPressed event
         onButtonPressed: () {
           //do some thing
         },
-        pageBody: const SafeArea(
-          child: Center(
-            child: Text('page contents'),
-          ),
-        ),
+        //the content of the bottom app bar
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
