@@ -98,21 +98,21 @@ the parameter `shape` takes three values:
 shape: SlidableBottomAppBarShape.rounded,
 ```
 
-this value will give you the folowing result:
+this value will give you the folowing result:<br />
 ![shape:rounded](https://user-images.githubusercontent.com/77194041/201509750-569b1f77-4f04-4571-9b5a-9e5df14b1ccd.jpg)
 
 ```dart
 shape: SlidableBottomAppBarShape.wave,
 ```
 
-this value will give you the folowing result:
-![shape:rounded](https://user-images.githubusercontent.com/77194041/201509284-3ed47912-08bb-4c75-ba99-dde2f9637675.jpg)
+this value will give you the folowing result:<br />
+![shape:wave](https://user-images.githubusercontent.com/77194041/201510223-9171ae49-5535-4fab-ba7e-14558cf2ac5c.jpg)
 
 ```dart
 shape: SlidableBottomAppBarShape.roundedCurved,
 ```
 
-this value will give you the folowing result:
+this value will give you the folowing result:<br />
 ![shape:roundedCurved](https://user-images.githubusercontent.com/77194041/201509973-0afef566-7def-44fa-9a74-06ab296a39bc.jpg)
 
 ## Author
