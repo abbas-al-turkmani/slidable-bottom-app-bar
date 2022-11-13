@@ -51,7 +51,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://raw.githubusercontent.com/abbas-al-turkmani/slidable-bottom-app-bar/main/gifs/1.gif')
+![githup]('https://github.com/abbas-al-turkmani/my-flutter-package-reviews/raw/main/slidable-bottom-app-bar-reviews/button.gif')
 
 ```dart
     ...
@@ -60,7 +60,7 @@ return Scaffold(
     ...
 ```
 
-![Preview]('https://raw.githubusercontent.com/abbas-al-turkmani/slidable-bottom-app-bar/main/gifs/2.gif')
+![githup]('https://github.com/abbas-al-turkmani/my-flutter-package-reviews/raw/main/slidable-bottom-app-bar-reviews/no-button.gif')
 
 ## Getting started
 
@@ -77,8 +77,6 @@ Then run $ flutter pub get. In your library, add the following import:
 import 'package:slidable_bottom_app_bar/slidable_bottom_app_bar.dart';
 ```
 
-## About Author
+## Author
 
-Abbas al turkmani
-[githup](https://github.com/abbas-al-turkmani)
-[mail me](abbas.az408@gmail.com)
+Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani) - [mail me](abbas.az408@gmail.com)
