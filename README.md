@@ -13,9 +13,9 @@ and the Flutter guide for
 
 A flutter package create a bottom app bar that can slide to the position of the screen that spicefied in maxHeight property when clicking on the button or by sliding by hande.
 
-## Things to note
+## note
 
-the `slidable_bottom_app_bar` is a widget for mobile platform, if you use it in desktop or web it will be ugly.
+the `slidable_bottom_app_bar` is a widget for designed to work on mobile layouts, using it in desktop layout couldn't looks good.
 
 ## Preview
 
@@ -139,4 +139,5 @@ this value will give you the folowing result:<br />
 
 ## Author
 
-Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani) - mail me: abbas.az408@gmail.com
+Abbas al turkmani - [githup](https://github.com/abbas-al-turkmani)
+[mail me](mailto:abbas.az408@gmail.com)
