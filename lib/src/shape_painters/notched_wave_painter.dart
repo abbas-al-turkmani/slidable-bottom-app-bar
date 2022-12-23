@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NotechedWavePainter extends CustomPainter {
-  NotechedWavePainter(
+class NotchedWavePainter extends CustomPainter {
+  NotchedWavePainter(
     this.color,
     this.allowShadow,
     this.shadowColor,
