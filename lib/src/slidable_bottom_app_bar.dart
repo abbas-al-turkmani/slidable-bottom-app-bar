@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-import 'shape_painters/noteched_rounded_painter.dart';
-import 'shape_painters/noteched_wave_painter.dart';
+import 'shape_painters/notched_rounded_painter.dart';
+import 'shape_painters/notched_rounded_flat_painter.dart';
+import 'shape_painters/notched_wave_painter.dart';
 import 'shape_painters/rounded_curved_painter.dart';
 import 'slidable_bottom_app_bar_shape.dart';
 
@@ -14,10 +16,15 @@ class SlidableBottomAppBar extends StatefulWidget {
     this.body,
     this.child,
     this.shape = SlidableBottomAppBarShape.rounded,
+    this.backgroundBlurValue = 0,
+    this.minHeight = 120,
     this.maxHeight = 250,
     this.hasCenterButton = true,
     this.onButtonPressed,
+    this.onButtonPressedToggle = true,
     this.buttonChild,
+    this.buttonHeight = 0.25,
+    this.buttonElevation = 0.1,
     this.allowShadow = false,
     this.color = Colors.blue,
     this.buttonColor = Colors.blue,
@@ -50,6 +57,12 @@ class SlidableBottomAppBar extends StatefulWidget {
   final bool allowShadow;
   final bool hasCenterButton;
 
+  ///blurs the background under the bar.
+  final double backgroundBlurValue;
+
+  ///the minimum height that app bar will slide to it.
+  final double minHeight;
+
   ///the maximum height that app bar will slide to it.
   final double maxHeight;
 
@@ -62,8 +75,17 @@ class SlidableBottomAppBar extends StatefulWidget {
   ///the shape of the app bar.
   final SlidableBottomAppBarShape shape;
 
+  ///height of the button [values between 0 and 1]
+  final double buttonHeight;
+
+  ///elevation of the button [values between 0 and 1]
+  final double buttonElevation;
+
   ///onButtonPressed event this Function will run after pressing the button and starting the slide show.
   final void Function()? onButtonPressed;
+
+  ///will the bar expand and shrink on clicking the button.
+  final bool onButtonPressedToggle;
 
   @override
   State<SlidableBottomAppBar> createState() => _NotechedResponsiveAppBarState();
@@ -77,19 +99,25 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
   @override
   void initState() {
     _shapes = {
-      SlidableBottomAppBarShape.rounded: NotechedRoundedPainter(
+      SlidableBottomAppBarShape.rounded: NotchedRoundedPainter(
         widget.color!,
         widget.allowShadow,
         widget.shadowColor,
         widget.hasCenterButton,
       ),
-      SlidableBottomAppBarShape.wave: NotechedWavePainter(
+      SlidableBottomAppBarShape.wave: NotchedWavePainter(
         widget.color!,
         widget.allowShadow,
         widget.shadowColor,
         widget.hasCenterButton,
       ),
       SlidableBottomAppBarShape.roundedCurved: RoundedCurvedPainter(
+        widget.color!,
+        widget.allowShadow,
+        widget.shadowColor,
+        widget.hasCenterButton,
+      ),
+      SlidableBottomAppBarShape.roundedFlat: RoundedFlatPainter(
         widget.color!,
         widget.allowShadow,
         widget.shadowColor,
@@ -104,9 +132,7 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
-    final double buttomAppBarHeight = screenSize.height * 0.1;
-
-    double containerHeight = _isShown ? widget.maxHeight : buttomAppBarHeight;
+    double containerHeight = _isShown ? widget.maxHeight : widget.minHeight;
 
     var shape = _shapes[widget.shape];
 
@@ -136,42 +162,54 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
               },
               child: Stack(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(
-                      0,
-                      buttomAppBarHeight,
-                      0,
-                      0,
+                  ClipRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                          sigmaX: widget.backgroundBlurValue,
+                          sigmaY: widget.backgroundBlurValue),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              0,
+                              widget.minHeight,
+                              0,
+                              0,
+                            ),
+                            child: Container(
+                              width: screenSize.width,
+                              height: widget.maxHeight,
+                              color: widget.color,
+                              child: widget.body,
+                            ),
+                          ),
+                          CustomPaint(
+                            size: Size(screenSize.width, widget.minHeight),
+                            painter: shape,
+                          ),
+                          SizedBox(
+                            width: screenSize.width,
+                            height: widget.minHeight,
+                            child: widget.child,
+                          ),
+                        ],
+                      ),
                     ),
-                    child: Container(
-                      width: screenSize.width,
-                      height: widget.maxHeight,
-                      color: widget.color,
-                      child: widget.body,
-                    ),
-                  ),
-                  CustomPaint(
-                    size: Size(screenSize.width, buttomAppBarHeight),
-                    painter: shape,
-                  ),
-                  SizedBox(
-                    width: screenSize.width,
-                    height: buttomAppBarHeight,
-                    child: widget.child,
                   ),
                   Center(
-                    heightFactor: 0.6,
+                    heightFactor: widget.buttonHeight,
                     child: widget.hasCenterButton
                         ? FloatingActionButton(
                             onPressed: () {
-                              setState(() {
-                                _isShown = !_isShown;
-                              });
-
+                              if (widget.onButtonPressedToggle) {
+                                setState(() {
+                                  _isShown = !_isShown;
+                                });
+                              }
                               widget.onButtonPressed!();
                             },
                             backgroundColor: widget.buttonColor,
-                            elevation: 0.1,
+                            elevation: widget.buttonElevation,
                             child: widget.buttonChild,
                           )
                         : null,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NotechedRoundedPainter extends CustomPainter {
-  NotechedRoundedPainter(
+class NotchedRoundedPainter extends CustomPainter {
+  NotchedRoundedPainter(
     this.color,
     this.allowShadow,
     this.shadowColor,
