@@ -1,6 +1,6 @@
 name: slidable_bottom_app_bar
 description: A slidable bottom app bar can slide to the medal of the screen.
-version: 1.0.1
+version: 1.1.0
 homepage: https://github.com/abbas-al-turkmani/slidable-bottom-app-bar
 
 environment:
@@ -20,7 +20,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
+# flutter:
 
   # To add assets to your package, add an assets section, like this:
   # assets:
