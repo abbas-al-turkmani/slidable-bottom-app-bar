@@ -5,7 +5,7 @@ import 'shape_painters/noteched_wave_painter.dart';
 import 'shape_painters/rounded_curved_painter.dart';
 import 'slidable_bottom_app_bar_shape.dart';
 
-///bottom app bar can silde to the position of the screen that spicefied in maxHeight property
+///bottom app bar can silde to the position of the screen which spicefied in maxHeight property
 ///
 class SlidableBottomAppBar extends StatefulWidget {
   const SlidableBottomAppBar({
@@ -126,13 +126,13 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
             color: Colors.transparent,
             child: GestureDetector(
               onPanUpdate: (details) {
-                if (!_isShown) {
-                  if (details.delta.direction < 0) _isShown = true;
-                } else {
-                  if (details.delta.direction > 0) _isShown = false;
-                }
-
-                setState(() {});
+                setState(() {
+                  if (!_isShown) {
+                    if (details.delta.direction < 0) _isShown = true;
+                  } else {
+                    if (details.delta.direction > 0) _isShown = false;
+                  }
+                });
               },
               child: Stack(
                 children: [
