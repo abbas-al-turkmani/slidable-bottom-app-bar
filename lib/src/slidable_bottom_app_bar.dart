@@ -47,7 +47,12 @@ class SlidableBottomAppBar extends StatefulWidget {
   ///the color of the shadow that appeare ander the app bar over the app bar content body.
   final Color shadowColor;
 
+  ///if [true] it will add a shadow around the app bar, and if [false] no shadow will be added.
   final bool allowShadow;
+
+  ///detrimined if there is a button in the center of the appbar or not.
+  ///[true] it will show a button in the center.
+  ///[false] no button in the center.
   final bool hasCenterButton;
 
   ///the maximum height that app bar will slide to it.
