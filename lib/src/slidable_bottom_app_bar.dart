@@ -29,7 +29,7 @@ class SlidableBottomAppBar extends StatefulWidget {
   ///important pageBody property is used to Declare the page contents.
   final Widget pageBody;
 
-  ///body property is used to Declare the body of the app bar the will appear after clicking the button or silding if the haseCenterButton property is set to false.
+  ///body property is used to Declare the body of the app bar which will appear after clicking the button or silding if the haseCenterButton property is set to false.
   final Widget? body;
 
   ///child property is used to declare the appearance content of the app bar.
@@ -72,30 +72,36 @@ class SlidableBottomAppBar extends StatefulWidget {
 class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
   bool _isShown = false;
 
-  late Map<SlidableBottomAppBarShape, CustomPainter> _shapes;
+  late CustomPainter _shape;
 
   @override
   void initState() {
-    _shapes = {
-      SlidableBottomAppBarShape.rounded: NotechedRoundedPainter(
-        widget.color!,
-        widget.allowShadow,
-        widget.shadowColor,
-        widget.hasCenterButton,
-      ),
-      SlidableBottomAppBarShape.wave: NotechedWavePainter(
-        widget.color!,
-        widget.allowShadow,
-        widget.shadowColor,
-        widget.hasCenterButton,
-      ),
-      SlidableBottomAppBarShape.roundedCurved: RoundedCurvedPainter(
-        widget.color!,
-        widget.allowShadow,
-        widget.shadowColor,
-        widget.hasCenterButton,
-      ),
-    };
+    switch (widget.shape) {
+      case SlidableBottomAppBarShape.rounded:
+        _shape = NotechedRoundedPainter(
+          widget.color!,
+          widget.allowShadow,
+          widget.shadowColor,
+          widget.hasCenterButton,
+        );
+        break;
+      case SlidableBottomAppBarShape.wave:
+        _shape = NotechedWavePainter(
+          widget.color!,
+          widget.allowShadow,
+          widget.shadowColor,
+          widget.hasCenterButton,
+        );
+        break;
+      case SlidableBottomAppBarShape.roundedCurved:
+        _shape = RoundedCurvedPainter(
+          widget.color!,
+          widget.allowShadow,
+          widget.shadowColor,
+          widget.hasCenterButton,
+        );
+        break;
+    }
 
     super.initState();
   }
@@ -107,8 +113,6 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
     final double buttomAppBarHeight = screenSize.height * 0.1;
 
     double containerHeight = _isShown ? widget.maxHeight : buttomAppBarHeight;
-
-    var shape = _shapes[widget.shape];
 
     return Stack(
       fit: StackFit.expand,
@@ -137,12 +141,7 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
               child: Stack(
                 children: [
                   Padding(
-                    padding: EdgeInsets.fromLTRB(
-                      0,
-                      buttomAppBarHeight,
-                      0,
-                      0,
-                    ),
+                    padding: EdgeInsets.only(top: buttomAppBarHeight),
                     child: Container(
                       width: screenSize.width,
                       height: widget.maxHeight,
@@ -152,7 +151,7 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
                   ),
                   CustomPaint(
                     size: Size(screenSize.width, buttomAppBarHeight),
-                    painter: shape,
+                    painter: _shape,
                   ),
                   SizedBox(
                     width: screenSize.width,
