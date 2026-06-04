@@ -80,7 +80,13 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
   late CustomPainter _shape;
 
   @override
-  void initState() {
+  Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
+    final double buttomAppBarHeight = screenSize.height * 0.1;
+
+    double containerHeight = _isShown ? widget.maxHeight : buttomAppBarHeight;
+
     switch (widget.shape) {
       case SlidableBottomAppBarShape.rounded:
         _shape = NotechedRoundedPainter(
@@ -107,17 +113,6 @@ class _NotechedResponsiveAppBarState extends State<SlidableBottomAppBar> {
         );
         break;
     }
-
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-
-    final double buttomAppBarHeight = screenSize.height * 0.1;
-
-    double containerHeight = _isShown ? widget.maxHeight : buttomAppBarHeight;
 
     return Stack(
       fit: StackFit.expand,
