@@ -6,7 +6,6 @@ import 'shape_painters/rounded_curved_painter.dart';
 import 'slidable_bottom_app_bar_shape.dart';
 
 ///bottom app bar can silde to the position of the screen which spicefied in maxHeight property
-///
 class SlidableBottomAppBar extends StatefulWidget {
   const SlidableBottomAppBar({
     Key? key,
